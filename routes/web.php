@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.dashboard');
 });
 
-Route::post('/user1', 'UserController@createUser');
+Route::post('/user', 'UserController@createUser');

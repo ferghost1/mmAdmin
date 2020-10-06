@@ -37,4 +37,10 @@ class User extends Authenticatable
     protected $casts = [
         
     ];
+
+    public function getUsers($conditions, $params = []) {
+        return $this->join('user_details as u_d', 'users.id', 'u_d.user_id')
+            ->where($conditions)
+            ->get('users.*', 'user_details.account_balance', 'user_details.promotion_balance');
+    }
 }
